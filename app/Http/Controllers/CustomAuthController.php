@@ -26,6 +26,6 @@ class CustomAuthController extends Controller
             'password' => Hash::make($data['password'])
         ]);
          
-        return redirect("dashboard")->withSuccess('You have signed-in');
+        return response()->json('Successfully registered');
     }
 }
