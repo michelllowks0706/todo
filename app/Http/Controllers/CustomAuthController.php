@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Hash;
 
@@ -10,7 +11,7 @@ class CustomAuthController extends Controller
 {
     public function index()
     {
-        return view('auth.register');
+        return view('auth.login');
     }  
 
     public function register(Request $request)
@@ -27,5 +28,20 @@ class CustomAuthController extends Controller
         ]);
          
         return response()->json('Successfully registered');
+    }
+
+    public function login(Request $request)
+    {  
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required|min:6',
+        ]);
+           
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            return redirect('dashboard');
+        }
+         
+        return response()->json('Incorrect');
     }
 }
