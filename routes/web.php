@@ -15,6 +15,7 @@ use App\Http\Controllers\CustomAuthController;
 */
 
 Route::get('/login', [CustomAuthController::class, 'index'])->name('login');
+Route::post('/register', [CustomAuthController::class, 'register'])->name('register');
 Route::get('/', function () {
     return view('main');
 });
