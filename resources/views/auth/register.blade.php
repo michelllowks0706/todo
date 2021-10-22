@@ -2,7 +2,7 @@
 
 <div class="card m-5 p-5">
     TODO
-    <h1>Sign Up</h1>
+    <h1>Register</h1>
     <form>
         <div class="form-group py-2">
             <label for="email">Email</label>
