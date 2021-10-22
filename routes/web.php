@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,12 @@ use App\Http\Controllers\CustomAuthController;
 |
 */
 
-Route::get('/login', [CustomAuthController::class, 'index'])->name('login');
+Route::get('/', [CustomAuthController::class, 'index'])->name('login');
+Route::get('/registration', [CustomAuthController::class, 'registration'])->name('registration');
 Route::post('/signup', [CustomAuthController::class, 'register'])->name('signup');
 Route::post('/signin', [CustomAuthController::class, 'login'])->name('signin');
-Route::get('/', function () {
-    return view('main');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', [TaskController::class, 'index'])->name('dashboard');
+    Route::get('/logout', [CustomAuthController::class, 'logout'])->name('logout');
 });

@@ -10,7 +10,7 @@
                 <button class="btn btn-primary" id="signUpBtn">Sign Up</button>
             </div>
             <div>
-                Already have an account? Login now!
+                <a href="{{ route('login') }}">Already have an account? Login now!</a>
             </div>
         </form>
     </div>

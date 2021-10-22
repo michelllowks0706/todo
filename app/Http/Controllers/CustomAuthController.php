@@ -39,9 +39,21 @@ class CustomAuthController extends Controller
            
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect('dashboard');
+            return response()->json(['url' => '/dashboard']);
         }
          
         return response()->json('Incorrect');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+  
+        return response()->json(['url' => '/']);
+    }
+
+    public function registration() 
+    {
+        return view('auth.register');
     }
 }

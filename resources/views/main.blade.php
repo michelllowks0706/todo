@@ -25,7 +25,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center bg-white">
+        {{-- <div class="relative flex items-top justify-center bg-white">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
@@ -39,7 +39,7 @@
                     @endauth
                 </div>
             @endif
-        </div>
+        </div> --}}
         <script src="{{ asset('js/script.js') }}"></script>
     </body>
 </html>

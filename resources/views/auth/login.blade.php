@@ -9,5 +9,8 @@
         <div class="py-4">
             <button class="btn btn-primary" id="signInBtn">Log In</button>
         </div>
+        <div>
+           <a href="{{ route('registration') }}">Didnt have an account? Login now!</a>
+        </div>
     </form>
 </div>

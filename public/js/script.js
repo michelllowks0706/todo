@@ -19,7 +19,6 @@ $(document).ready(function(){
     });
 
     $("#signInBtn").click(function(e){
-        console.log('ahhaha')
         e.preventDefault();
 
         $.ajaxSetup({
@@ -33,7 +32,29 @@ $(document).ready(function(){
             url: '/signin',
             data: $('#login_form').serialize(),
             success: function(data) {
-                console.log(data);
+                if (data.url) {
+                    window.location = data.url;
+                }
+            }
+        });
+    });
+
+    $('#logout').click(function(e) {
+        e.preventDefault();
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        
+        $.ajax({
+            type: 'GET',
+            url: '/logout',
+            success: function(data) {
+                if (data.url) {
+                    window.location = data.url
+                }
             }
         });
     });
