@@ -11,7 +11,7 @@
             <h4>Tasks</h4>
         </div>
         <div class="col-11">
-            <button class="btn btn-outline-success w-25" id="newTask" data-bs-toggle="modal" data-bs-target="#taskModal">Add Task</button>
+            <a id="newTask" data-bs-toggle="modal" data-bs-target="#taskModal" role="button"><img class="pointer" src="{{ asset('images/plus.png') }}" width="30px"></a>
         </div>
     </div>
   <div class="row mt-3">
