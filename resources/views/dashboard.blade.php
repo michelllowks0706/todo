@@ -3,14 +3,13 @@
 <nav class="navbar navbar-light bg-light justify-content-between px-4">
   <a class="navbar-brand">TODO</a>
   <button class="btn btn-outline-success my-2 my-sm-0" id="logout">Log Out</button>
-  
 </nav>
 
 
 <div class="container m-3">
     <div class="row">
         <div class="col"><h4>Tasks</h4></div>
-        <div class="col-11"><button class="btn btn-outline-success w-25" id="new">Add Task</button></div>
+        <div class="col-11"><img class="pointer" src="{{ asset('images/plus.png') }}" width="30px"></div>
     </div>
   <div class="row mt-3">
     <div class="col-sm">
