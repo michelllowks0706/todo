@@ -27,7 +27,7 @@ class CustomAuthController extends Controller
             'password' => Hash::make($data['password'])
         ]);
          
-        return response()->json('Successfully registered');
+        return response()->json(['url' => '/']);
     }
 
     public function login(Request $request)
